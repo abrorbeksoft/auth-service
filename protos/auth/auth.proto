@@ -1,0 +1,12 @@
+syntax="proto3";
+package genproto;
+option go_package="genproto/auth";
+
+service RouteGuide {
+  rpc HelloUser(Message) returns (Message) {}
+}
+
+message Message {
+  string name=1;
+  string message=2;
+}
