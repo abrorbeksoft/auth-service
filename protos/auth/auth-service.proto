@@ -1,0 +1,25 @@
+syntax="proto3";
+
+package auth;
+option go_package="genproto/auth";
+
+message User{
+  string id=1;
+  string name=2;
+  string surname=3;
+  int32 age=4;
+}
+
+message UserResponce {
+  User user = 1;
+}
+message GetRequest {
+  string id=1;
+}
+service AuthSerivce {
+  rpc Create(User) returns (UserResponce) {}
+  rpc Find(GetRequest) returns (UserResponce) {}
+}
+
+
+
